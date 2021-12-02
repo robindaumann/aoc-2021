@@ -1,8 +1,27 @@
-# Aoc2020
+# Aoc2021
 
-My solutions for [AOC 2021](https://adventofcode.com/2021/). Written in elixir.
+My solutions for [AOC 2021](https://adventofcode.com/2021/). Written in elixir. I do not
+run the tests in Github Actions this year. So, the inputs will be excluded here.
 
-## Running
+## Structure
 
-Each day has its own test file that runs the examples from the puzzle as well as
-the inputs.
+* `lib/` contains the project source code
+* `input/` should contain the puzzle input (not included here)
+* `test/` contains the tests which are used to start the computation and check the output
+for the minimal example as well as the full input
+
+## Run tests
+
+Either run
+
+```shell
+mix test
+```
+
+in the project root to start all tests or
+
+```shell
+mix test test/day_01.exs
+```
+
+to start the tests for a specific day (i.e. day 1).
