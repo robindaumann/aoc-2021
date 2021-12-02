@@ -15,11 +15,13 @@ defmodule Input do
     end
   end
 
+  @spec lines(Path.t()) :: [String.t()]
+  def lines(path) do
+    File.stream!(path) |> Enum.map(&String.trim_trailing/1)
+  end
+
   @spec read_numbers(Path.t()) :: [integer()]
   def read_numbers(path) do
-    path
-    |> File.stream!()
-    |> Enum.map(&String.trim_trailing/1)
-    |> Enum.map(&String.to_integer/1)
+    lines(path) |> Enum.map(&String.to_integer/1)
   end
 end
