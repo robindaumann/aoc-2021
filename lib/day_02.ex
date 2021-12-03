@@ -8,7 +8,7 @@ defmodule Day02 do
   end
 
   defp solve(path, start, step) do
-    Input.lines(path)
+    Aoc.lines(path)
     |> Enum.map(&parse/1)
     |> Enum.reduce(start, step)
   end

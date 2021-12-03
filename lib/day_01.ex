@@ -1,6 +1,6 @@
 defmodule Day01 do
   def part1(path) do
-    Input.read_numbers(path) |> num_incs
+    Aoc.read_numbers(path) |> num_incs
   end
 
   defp num_incs(ns) do
@@ -11,7 +11,7 @@ defmodule Day01 do
   defp count_inc(x, {count, _}), do: {count, x}
 
   def part2(path) do
-    Input.read_numbers(path) |> sum_window |> num_incs
+    Aoc.read_numbers(path) |> sum_window |> num_incs
   end
 
   defp sum_window([a, b, c | _] = ns), do: [a + b + c | sum_window(tl(ns))]
