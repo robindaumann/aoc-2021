@@ -17,7 +17,7 @@ defmodule Aoc do
 
   @spec lines(Path.t()) :: [String.t()]
   def lines(path) do
-    File.stream!(path) |> Enum.map(&String.trim_trailing/1)
+    File.stream!(path) |> Enum.map(&String.trim/1)
   end
 
   @spec read_numbers(Path.t(), 2..36) :: [integer()]
