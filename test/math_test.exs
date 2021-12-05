@@ -9,8 +9,4 @@ defmodule MathTest do
   test "mod inv not coprime raises" do
     assert_raise ArithmeticError, fn -> Math.mod_inv(2, 4) end
   end
-
-  test "product empty" do
-    assert_raise Enum.EmptyError, fn -> Math.product([]) end
-  end
 end

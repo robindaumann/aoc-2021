@@ -4,7 +4,7 @@ defmodule Day03 do
     |> bit_frequencies()
     |> Enum.reduce(["", ""], &find_ɣɛ/2)
     |> Enum.map(&String.to_integer(&1, 2))
-    |> Enum.reduce(&*/2)
+    |> Enum.product()
   end
 
   def part2(path) do
@@ -16,7 +16,7 @@ defmodule Day03 do
       |> Enum.join()
       |> String.to_integer(2)
     end)
-    |> Enum.reduce(&*/2)
+    |> Enum.product()
   end
 
   defp parse(path) do

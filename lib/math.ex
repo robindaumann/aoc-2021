@@ -57,23 +57,6 @@ defmodule Math do
   end
 
   @doc """
-  Calculates the product of the given numbers
-
-  ## Examples
-
-    iex> Math.product([1, 2, 3])
-    6
-
-    iex> Math.product([5, -6])
-    -30
-
-  """
-  @spec product([number]) :: number
-  def product(elements) do
-    Enum.reduce(elements, &*/2)
-  end
-
-  @doc """
   Calculates the sine at the given point.
 
   Expects the argument to be an angle in degrees.
