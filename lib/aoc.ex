@@ -20,9 +20,12 @@ defmodule Aoc do
     File.stream!(path) |> Enum.map(&String.trim/1)
   end
 
-  @spec read_numbers(Path.t(), 2..36) :: [integer()]
-  def read_numbers(path, base \\ 10) do
-    lines(path) |> Enum.map(&String.to_integer(&1, base))
+  @spec read_numbers(Path.t(), String.t()) :: [integer()]
+  def read_numbers(path, separator \\ "\n") do
+    File.read!(path)
+    |> String.trim_trailing()
+    |> String.split(separator)
+    |> Enum.map(&String.to_integer(&1))
   end
 
   @spec transpose([list]) :: [list]
