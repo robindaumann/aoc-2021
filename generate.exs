@@ -2,6 +2,11 @@
 
 [day] = System.argv()
 
+if String.length(day) != 2 do
+  IO.puts(:stderr, "provide day with leading zero. day: '#{day}'")
+  System.halt(1)
+end
+
 lib_file = "lib/day_#{day}.ex"
 unless File.exists?(lib_file) do
   File.write!(lib_file, EEx.eval_file("lib/day.eex", day: day))
