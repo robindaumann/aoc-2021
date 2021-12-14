@@ -1,6 +1,4 @@
 defmodule Day06 do
-  import Enum
-
   def part1(path) do
     evolve(path, 80)
   end
@@ -11,9 +9,9 @@ defmodule Day06 do
 
   defp evolve(path, times) do
     Aoc.read_numbers(path, ",")
-    |> reduce(List.duplicate(0, 9), &list_freq/2)
+    |> Enum.reduce(List.duplicate(0, 9), &list_freq/2)
     |> propagate(times)
-    |> sum()
+    |> Enum.sum()
   end
 
   defp list_freq(fish, freq) do
