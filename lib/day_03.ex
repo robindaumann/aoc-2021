@@ -2,7 +2,7 @@ defmodule Day03 do
   def part1(path) do
     parse(path)
     |> bit_frequencies()
-    |> Enum.reduce(["", ""], &find_ɣɛ/2)
+    |> Enum.reduce(["", ""], &find_ye/2)
     |> Enum.map(&String.to_integer(&1, 2))
     |> Enum.product()
   end
@@ -30,11 +30,11 @@ defmodule Day03 do
     |> Enum.map(&Enum.frequencies/1)
   end
 
-  defp find_ɣɛ(%{"0" => zeros, "1" => ones}, [ɣ, ɛ]) when zeros > ones do
-    [ɣ <> "0", ɛ <> "1"]
+  defp find_ye(%{"0" => zeros, "1" => ones}, [y, e]) when zeros > ones do
+    [y <> "0", e <> "1"]
   end
 
-  defp find_ɣɛ(_, [ɣ, ɛ]), do: [ɣ <> "1", ɛ <> "0"]
+  defp find_ye(_, [y, e]), do: [y <> "1", e <> "0"]
 
   defp choose_oxygen(%{"0" => zeros, "1" => ones}) when zeros > ones, do: "0"
   defp choose_oxygen(_), do: "1"

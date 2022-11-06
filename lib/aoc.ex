@@ -34,4 +34,8 @@ defmodule Aoc do
     |> List.zip()
     |> Enum.map(&Tuple.to_list/1)
   end
+
+  def median(list) do
+    Enum.sort(list) |> Enum.fetch!(div(Enum.count(list), 2))
+  end
 end
